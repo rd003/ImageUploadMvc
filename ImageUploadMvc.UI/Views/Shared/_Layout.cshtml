@@ -25,12 +25,33 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Person" asp-action="Index">People</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
     <div class="container">
+        <div style="my-2">
+            @if(TempData[nameof(NotificationTypes.SuccessMessage)]!=null)
+            {
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    @TempData[nameof(NotificationTypes.SuccessMessage)]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            }
+
+            @if (TempData[nameof(NotificationTypes.ErrorMessage)] != null)
+            {
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    @TempData[nameof(NotificationTypes.ErrorMessage)]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            }
+
+        </div>
         <main role="main" class="pb-3">
             @RenderBody()
         </main>

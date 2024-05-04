@@ -1,4 +1,6 @@
-﻿namespace ImageUploadMvc.Data.Models;
+﻿using Microsoft.AspNetCore.Http;
+
+namespace ImageUploadMvc.Data.Models;
 
 public class Person
 {
@@ -6,4 +8,5 @@ public class Person
     public string? FirstName { get; set; }
     public string? LastName { get; set; }
     public string? ProfilePicture { get; set; }
+    public IFormFile? ImageFile { get; set; }
 }

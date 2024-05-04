@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Person>
+@{
+    ViewData["Title"] = "People";
+}
+
+<h2>People</h2>
+<a href="/Person/AddPerson" class="btn btn-info">Add More</a>
+
+@if(Model?.Count()>0)
+{
+<table class="table table-striped my-2" style="width:60%">
+     <tr>
+        <th>Name</th>
+        <th>Profile Picture</th>
+        <th>Action</th>
+     </tr>
+
+     @foreach(var person in Model)
+    {
+        <tr>
+            <td>@person.FirstName @person.LastName</td>
+            <td>
+                @if(!string.IsNullOrWhiteSpace(person.ProfilePicture))
+                {
+                    <img alt="profile pic" style="width:100px;height:80px" src="/Images/@person.ProfilePicture"/>
+                }
+                else
+                {
+                    <span>No image</span>
+                }
+            </td>
+            <td>
+                <a href="/Person/UpdatePerson?id=@person.Id" class="btn btn-info">Edit</a>
+                <a href="/Person/DeletePerson?id=@person.Id" class="btn btn-danger" onclick="return window.confirm('Are you sure to delete?')">Delete</a>
+            </td>
+        </tr>
+    }
+
+    </table>
+}
+else
+{
+    <h4>No data found</h4>
+}
+
