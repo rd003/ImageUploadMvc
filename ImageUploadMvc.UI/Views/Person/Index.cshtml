@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Person>
+
+<h3>People</h3>
+<a href="/Person/AddPerson" class="btn btn-info">Add More</a>
+
+<table style="width:60%" class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>ProfilePic</th>
+            <th>Acton</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var person in Model)
+        {
+            <tr>
+                <td>@person.FirstName @person.LastName</td>
+                <td>
+                    @if(!string.IsNullOrWhiteSpace(person.ProfilePicture))
+                    {
+                        <img src="/Images/@person.ProfilePicture" style="height:80px;width:100px" alt="Profile pic" />
+                    }
+                    else
+                    {
+                        <span>No image</span>
+                    }
+                </td>
+
+                <td>
+                    <a href="/Person/UpdatePerson?id=@person.Id" class="btn btn-info">Edit</a>
+
+                    <a href="/Person/DeletePerson?id=@person.Id" class="btn btn-danger" onclick="return window.confirm('Are you sure?')">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

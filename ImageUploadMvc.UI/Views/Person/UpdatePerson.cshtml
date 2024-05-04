@@ -1,0 +1,44 @@
+﻿@model Person
+@{
+    ViewData["Title"] = "Add Person";
+}
+
+<div style="width:50%">
+    <h3>Update Person</h3>
+    <a href="/Person/Index" class="btn btn-outline-info">Back</a>
+
+    <form asp-action="UpdatePerson" enctype="multipart/form-data">
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="ProfilePicture" />
+       <div class="my-2">
+         <label>FirstName*</label>
+         <input type="text" asp-for="FirstName" class="form-control" />
+         <span class="text-danger" asp-validation-for="FirstName"></span>
+       </div>
+
+        <div class="my-2">
+            <label>LastName*</label>
+            <input type="text" asp-for="LastName" class="form-control" />
+            <span class="text-danger" asp-validation-for="LastName"></span>
+        </div>
+
+        <div class="my-2">
+            <label>Profile Pic</label>
+            @if(!string.IsNullOrWhiteSpace(Model.ProfilePicture))
+            {
+                <img src="/Images/@Model.ProfilePicture" alt="profile pic" style="width:100px;height:80px" />
+            }
+            <input type="file" asp-for="ImageFile" class="form-control" />
+        </div>
+
+        <div class="my-2">
+            <button type="submit" asp-for="ImageFile" class="btn btn-primary">Save</button>
+        </div>
+
+        @TempData[nameof(NotificationTypes.SuccessMessage)]
+        @TempData[nameof(NotificationTypes.ErrorMessage)]
+
+    </form>
+    
+
+</div>

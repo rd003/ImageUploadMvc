@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageUploadMvc.UI", "ImageUploadMvc.UI\ImageUploadMvc.UI.csproj", "{62EB73B0-2D1C-4B07-93F1-A4F9EE9BD664}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageUploadMvc.UI", "ImageUploadMvc.UI\ImageUploadMvc.UI.csproj", "{62EB73B0-2D1C-4B07-93F1-A4F9EE9BD664}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageUploadMvc.Data", "ImageUploadMvc.Data\ImageUploadMvc.Data.csproj", "{C3B22AD1-4CA9-4842-8833-CCE361B34DC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageUploadMvc.Data", "ImageUploadMvc.Data\ImageUploadMvc.Data.csproj", "{C3B22AD1-4CA9-4842-8833-CCE361B34DC1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
